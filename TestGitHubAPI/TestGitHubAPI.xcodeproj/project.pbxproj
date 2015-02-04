@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		6D6C26FD1A829C96000D6787 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6C26FC1A829C96000D6787 /* main.m */; };
 		6D6C27001A829C96000D6787 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6C26FF1A829C96000D6787 /* AppDelegate.m */; };
-		6D6C27031A829C96000D6787 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6C27021A829C96000D6787 /* ViewController.m */; };
 		6D6C27061A829C96000D6787 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D6C27041A829C96000D6787 /* Main.storyboard */; };
 		6D6C27081A829C96000D6787 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D6C27071A829C96000D6787 /* Images.xcassets */; };
 		6D6C270B1A829C96000D6787 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D6C27091A829C96000D6787 /* LaunchScreen.xib */; };
 		6D6C27171A829C96000D6787 /* TestGitHubAPITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6C27161A829C96000D6787 /* TestGitHubAPITests.m */; };
+		6D6C27221A82B551000D6787 /* TGMainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6C27211A82B551000D6787 /* TGMainTableViewController.m */; };
+		6D6C27271A82B631000D6787 /* TGUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6C27261A82B631000D6787 /* TGUser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +33,16 @@
 		6D6C26FC1A829C96000D6787 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6D6C26FE1A829C96000D6787 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6D6C26FF1A829C96000D6787 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		6D6C27011A829C96000D6787 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		6D6C27021A829C96000D6787 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		6D6C27051A829C96000D6787 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6D6C27071A829C96000D6787 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6D6C270A1A829C96000D6787 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		6D6C27101A829C96000D6787 /* TestGitHubAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestGitHubAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D6C27151A829C96000D6787 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D6C27161A829C96000D6787 /* TestGitHubAPITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestGitHubAPITests.m; sourceTree = "<group>"; };
+		6D6C27201A82B551000D6787 /* TGMainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGMainTableViewController.h; sourceTree = "<group>"; };
+		6D6C27211A82B551000D6787 /* TGMainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGMainTableViewController.m; sourceTree = "<group>"; };
+		6D6C27251A82B631000D6787 /* TGUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGUser.h; sourceTree = "<group>"; };
+		6D6C27261A82B631000D6787 /* TGUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGUser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +84,10 @@
 		6D6C26F91A829C96000D6787 /* TestGitHubAPI */ = {
 			isa = PBXGroup;
 			children = (
+				6D6C27241A82B60D000D6787 /* Model */,
+				6D6C27231A82B5FF000D6787 /* Controller */,
 				6D6C26FE1A829C96000D6787 /* AppDelegate.h */,
 				6D6C26FF1A829C96000D6787 /* AppDelegate.m */,
-				6D6C27011A829C96000D6787 /* ViewController.h */,
-				6D6C27021A829C96000D6787 /* ViewController.m */,
 				6D6C27041A829C96000D6787 /* Main.storyboard */,
 				6D6C27071A829C96000D6787 /* Images.xcassets */,
 				6D6C27091A829C96000D6787 /* LaunchScreen.xib */,
@@ -117,6 +120,24 @@
 				6D6C27151A829C96000D6787 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6D6C27231A82B5FF000D6787 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6D6C27201A82B551000D6787 /* TGMainTableViewController.h */,
+				6D6C27211A82B551000D6787 /* TGMainTableViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		6D6C27241A82B60D000D6787 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6D6C27251A82B631000D6787 /* TGUser.h */,
+				6D6C27261A82B631000D6787 /* TGUser.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,9 +240,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D6C27031A829C96000D6787 /* ViewController.m in Sources */,
 				6D6C27001A829C96000D6787 /* AppDelegate.m in Sources */,
+				6D6C27271A82B631000D6787 /* TGUser.m in Sources */,
 				6D6C26FD1A829C96000D6787 /* main.m in Sources */,
+				6D6C27221A82B551000D6787 /* TGMainTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
