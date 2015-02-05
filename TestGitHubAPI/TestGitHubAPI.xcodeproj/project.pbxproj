@@ -19,6 +19,7 @@
 		6D6C27271A82B631000D6787 /* TGUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6C27261A82B631000D6787 /* TGUser.m */; };
 		6D6C272B1A82E159000D6787 /* TGUserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6C272A1A82E159000D6787 /* TGUserCell.m */; };
 		6D6C27301A82F1D4000D6787 /* TGDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6C272F1A82F1D4000D6787 /* TGDataManager.m */; };
+		6D6C27331A837E8E000D6787 /* TGPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6C27321A837E8E000D6787 /* TGPhotoView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,8 @@
 		6D6C272D1A82EB27000D6787 /* TGMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TGMacros.h; sourceTree = "<group>"; };
 		6D6C272E1A82F1D4000D6787 /* TGDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGDataManager.h; sourceTree = "<group>"; };
 		6D6C272F1A82F1D4000D6787 /* TGDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGDataManager.m; sourceTree = "<group>"; };
+		6D6C27311A837E8E000D6787 /* TGPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGPhotoView.h; sourceTree = "<group>"; };
+		6D6C27321A837E8E000D6787 /* TGPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGPhotoView.m; sourceTree = "<group>"; };
 		9153C6F4CD34254B1918E0FB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C5EB5BCFA0CED75BBDD4ED05 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D66CFDBC144B227EFB0BC912 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,6 +175,8 @@
 			children = (
 				6D6C27291A82E159000D6787 /* TGUserCell.h */,
 				6D6C272A1A82E159000D6787 /* TGUserCell.m */,
+				6D6C27311A837E8E000D6787 /* TGPhotoView.h */,
+				6D6C27321A837E8E000D6787 /* TGPhotoView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -366,6 +371,7 @@
 				6D6C26FD1A829C96000D6787 /* main.m in Sources */,
 				6D6C272B1A82E159000D6787 /* TGUserCell.m in Sources */,
 				6D6C27301A82F1D4000D6787 /* TGDataManager.m in Sources */,
+				6D6C27331A837E8E000D6787 /* TGPhotoView.m in Sources */,
 				6D6C27221A82B551000D6787 /* TGMainTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
