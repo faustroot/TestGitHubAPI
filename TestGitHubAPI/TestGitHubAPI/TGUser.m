@@ -10,4 +10,22 @@
 
 @implementation TGUser
 
+- (id)initWithDictionary:(NSDictionary *)aDictionary
+{
+	if (self = [super init])
+	{
+		self.login = [aDictionary objectForKey:@"login"];
+		self.url_avatar = [aDictionary objectForKey:@"avatar_url"];
+		self.url_html = [aDictionary objectForKey:@"html_url"];
+		/*
+			Other parametrs can be add when needed
+		 */
+	}
+	return self;
+}
+
+- (NSURL*)urlAvatarForSize:(NSInteger)aSize
+{
+	return [NSURL URLWithString:[NSString stringWithFormat:@"%@&size=%ld", self.url_avatar, (long)aSize]];
+}
 @end
