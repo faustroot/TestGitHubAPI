@@ -30,8 +30,10 @@
 	__weak typeof(self) weakSelf = self;
 	[[TGDataManager sharedManager] loadGitHubUsersWithSuccess:^(NSArray *users)
 	{
-		weakSelf.arrayUsers = users;
-		[weakSelf.tableView reloadData];
+		dispatch_async(dispatch_get_main_queue(), ^ {
+			weakSelf.arrayUsers = users;
+			[weakSelf.tableView reloadData];
+		});
 	}
 													  failure:^(NSError *error)
 	{
