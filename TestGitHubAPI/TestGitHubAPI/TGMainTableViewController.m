@@ -7,39 +7,56 @@
 //
 
 #import "TGMainTableViewController.h"
+#import "TGUserCell.h"
+#import "TGUser.h"
+#import "TGDataManager.h"
 
 #define CELL_IDENTIFIRE @"userIdentifireCell"
 
 @interface TGMainTableViewController ()
 
+@property (nonatomic, strong) NSArray* arrayUsers;
+
 @end
 
 @implementation TGMainTableViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+	
+	self.arrayUsers = [NSArray array];
+	
+	__weak typeof(self) weakSelf = self;
+	[[TGDataManager sharedManager] loadGitHubUsersWithSuccess:^(NSArray *users)
+	{
+		weakSelf.arrayUsers = users;
+		[weakSelf.tableView reloadData];
+	}
+													  failure:^(NSError *error)
+	{
+		[[[UIAlertView alloc] initWithTitle:@"Error"
+									message:error.localizedDescription
+								   delegate:nil
+						  cancelButtonTitle:@"Ok"
+						  otherButtonTitles:nil] show];
+	}];
 }
 
 #pragma mark - Table view data source
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    return self.arrayUsers.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CELL_IDENTIFIRE
+    TGUserCell *cell = [tableView dequeueReusableCellWithIdentifier:CELL_IDENTIFIRE
 															forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+	
+	[cell configCellForUser:[self.arrayUsers objectAtIndex:indexPath.row]];
+	
     return cell;
 }
 
