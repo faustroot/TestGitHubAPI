@@ -9,6 +9,7 @@
 #import "TGUserCell.h"
 #import "TGMacros.h"
 #import <UIImageView+AFNetworking.h>
+#import "TGPhotoView.h"
 
 @interface TGUserCell ()
 
@@ -16,6 +17,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelName;
 @property (weak, nonatomic) IBOutlet UILabel *labelUrl;
 
+@property (nonatomic, strong) TGPhotoView *photoViewer;
+@property (nonatomic, strong) TGUser *user;
 @end
 
 @implementation TGUserCell
@@ -28,10 +31,18 @@
 	self.imageViewAvatar.clipsToBounds = YES;
 	self.imageViewAvatar.layer.borderWidth = 1.f;
 	self.imageViewAvatar.layer.borderColor = [RGB(158.f, 204.f, 73.f) CGColor];
+	
+	__weak typeof(self) weakSelf = self;
+	self.photoViewer = [[TGPhotoView alloc] initWithImageView:self.imageViewAvatar
+												 loadingBlock:^(UIImageView * aBigPhoto) {
+													 [aBigPhoto setImageWithURL:[weakSelf.user urlAvatarForSize:400]
+															   placeholderImage:weakSelf.imageViewAvatar.image];
+												 }];
 }
 
 - (void)configCellForUser:(TGUser *)aUser
 {
+	self.user = aUser;
 	self.labelName.text = aUser.login;
 	self.labelUrl.text = aUser.url_html;
 	
