@@ -35,7 +35,8 @@
 	self.labelName.text = aUser.login;
 	self.labelUrl.text = aUser.url_html;
 	
-	[self.imageViewAvatar setImageWithURL:[aUser urlAvatarForSize:100]];
+	[self.imageViewAvatar setImageWithURL:[aUser urlAvatarForSize:100]
+						 placeholderImage:[UIImage new]];
 }
 
 @end
