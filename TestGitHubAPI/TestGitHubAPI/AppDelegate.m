@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <SVProgressHUD.h>
 
 @interface AppDelegate ()
 
@@ -15,9 +16,17 @@
 @implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
 	// Override point for customization after application launch.
+    [self prepareProgressHUDGlobally];
 	return YES;
+}
+
+- (void)prepareProgressHUDGlobally
+{
+    [SVProgressHUD setBackgroundColor:[UIColor darkGrayColor]];
+    [SVProgressHUD setForegroundColor:[UIColor whiteColor]];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

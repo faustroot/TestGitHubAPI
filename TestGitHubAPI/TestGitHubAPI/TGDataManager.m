@@ -9,7 +9,6 @@
 #import "TGDataManager.h"
 #import "TGUser.h"
 #import <AFNetworking.h>
-#import <SVProgressHUD.h>
 
 @interface TGDataManager ()
 
@@ -35,9 +34,6 @@
 	if (self = [super init])
 	{
 		self.sessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:@"https://api.github.com/"]];
-		
-		[SVProgressHUD setBackgroundColor:[UIColor darkGrayColor]];
-		[SVProgressHUD setForegroundColor:[UIColor whiteColor]];
 	}
 	
 	return self;
@@ -45,7 +41,6 @@
 
 - (void)loadGitHubUsersWithSuccess:(void (^)(NSArray * users))aSuccess failure:(void (^)(NSError *error))aFailure
 {
-	[SVProgressHUD showInfoWithStatus:@"Loading"];
 	
 	[self.sessionManager GET:@"users"
 				  parameters:nil
@@ -61,7 +56,6 @@
 		{
 			aSuccess(users);
 		}
-		[SVProgressHUD dismiss];
 	}
 					 failure:^(NSURLSessionDataTask *task, NSError *error)
 	{
@@ -69,7 +63,6 @@
 		{
 			aFailure(error);
 		}
-		[SVProgressHUD dismiss];
 	}];
 }
 

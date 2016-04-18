@@ -10,6 +10,7 @@
 #import "TGUserCell.h"
 #import "TGUser.h"
 #import "TGDataManager.h"
+#import <SVProgressHUD.h>
 
 #define CELL_IDENTIFIRE @"userIdentifireCell"
 
@@ -28,15 +29,20 @@
 	self.arrayUsers = [NSArray array];
 	
 	__weak typeof(self) weakSelf = self;
+    
+    [SVProgressHUD showInfoWithStatus:@"Loading"];
 	[[TGDataManager sharedManager] loadGitHubUsersWithSuccess:^(NSArray *users)
 	{
-		dispatch_async(dispatch_get_main_queue(), ^ {
+		dispatch_async(dispatch_get_main_queue(), ^
+        {
+            [SVProgressHUD dismiss];
 			weakSelf.arrayUsers = users;
-			[weakSelf.tableView reloadData];
+            [weakSelf.tableView reloadData];
 		});
 	}
-													  failure:^(NSError *error)
+                                                      failure:^(NSError *error)
 	{
+		[SVProgressHUD dismiss];
 		[[[UIAlertView alloc] initWithTitle:@"Error"
 									message:error.localizedDescription
 								   delegate:nil
